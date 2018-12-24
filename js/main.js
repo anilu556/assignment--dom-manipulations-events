@@ -40,10 +40,25 @@ document.querySelectorAll('.point').forEach(function(btn){
     total.textContent = parseInt(total.textContent) + parseInt(btn.textContent)
 
   })
-  
+
 })
 
 /* TASK 4 (Adventure Mode)-- Move Item List to List */
-
-
+document.querySelectorAll('.individual').forEach(function (element){
+  element.addEventListener('click', function(){
+    if (element.parentNode.className === "good-standing-list") {
+      document.querySelector('.probation-list').appendChild(element)
+      }
+    else if (element.parentNode.className ===  "probation-list") {
+      document.querySelector('.good-standing-list').appendChild(element)
+    }
+  })
+})
 /* TASK 5 (Adventure Mode) -- Change Text Background Color From Palette */
+
+document.querySelectorAll('span').forEach(function (box){
+  box.addEventListener('click', function(e){
+    var color = e.target.attributes.class.textContent;
+    document.querySelector('.msg').attributes.class.textContent = "msg " + color
+  })
+})
